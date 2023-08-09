@@ -1,7 +1,7 @@
 ﻿using FPTBookShop.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace FPTBookShop.Data
+namespace FPTBookShop.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext
     {

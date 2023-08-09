@@ -1,4 +1,4 @@
-﻿using FPTBookShop.Data;
+﻿using FPTBookShop.DataAccess.Data;
 using FPTBookShop.Models;
 using Microsoft.AspNetCore.Mvc;
 
