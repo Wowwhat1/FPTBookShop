@@ -36,6 +36,7 @@ namespace FPTBookShop.Controllers
             { 
                 _db.Categories.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Category created successful";
                 return RedirectToAction("Index");
             }
             return View();
@@ -63,6 +64,7 @@ namespace FPTBookShop.Controllers
             {
                 _db.Categories.Update(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Category edited successful";
                 return RedirectToAction("Index");
             }
             return View();
@@ -93,6 +95,7 @@ namespace FPTBookShop.Controllers
             }
             _db.Categories.Remove(obj);
             _db.SaveChanges();
+            TempData["success"] = "Category deleted successful";
             return RedirectToAction("Index");
         }
     }

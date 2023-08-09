@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.33920.267
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPTBookShop", "FPTBookShop\FPTBookShop.csproj", "{2509798D-98D8-4BF1-B689-F441EC19D403}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FPTBookShop", "FPTBookShop\FPTBookShop.csproj", "{2509798D-98D8-4BF1-B689-F441EC19D403}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPTBookShop.DataAccess", "FPTBookShop.DataAccess\FPTBookShop.DataAccess.csproj", "{723985B3-8DFC-484F-A0D2-4F6B1AE9C55A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPTBookShop.Models", "FPTBookShop.Models\FPTBookShop.Models.csproj", "{0FEA8771-A060-4058-9C3E-84CFF123FE30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPTBookShop.Utility", "FPTBookShop.Utility\FPTBookShop.Utility.csproj", "{12D74289-A51C-4590-A20D-F2EFD4A22D8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{2509798D-98D8-4BF1-B689-F441EC19D403}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2509798D-98D8-4BF1-B689-F441EC19D403}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2509798D-98D8-4BF1-B689-F441EC19D403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{723985B3-8DFC-484F-A0D2-4F6B1AE9C55A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{723985B3-8DFC-484F-A0D2-4F6B1AE9C55A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{723985B3-8DFC-484F-A0D2-4F6B1AE9C55A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{723985B3-8DFC-484F-A0D2-4F6B1AE9C55A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FEA8771-A060-4058-9C3E-84CFF123FE30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FEA8771-A060-4058-9C3E-84CFF123FE30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FEA8771-A060-4058-9C3E-84CFF123FE30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FEA8771-A060-4058-9C3E-84CFF123FE30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12D74289-A51C-4590-A20D-F2EFD4A22D8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12D74289-A51C-4590-A20D-F2EFD4A22D8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12D74289-A51C-4590-A20D-F2EFD4A22D8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12D74289-A51C-4590-A20D-F2EFD4A22D8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
