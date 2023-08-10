@@ -3,8 +3,9 @@ using FPTBookShop.DataAccess.Repository.IRepository;
 using FPTBookShop.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FPTBookShop.Controllers
+namespace FPTBookShop.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -33,8 +34,8 @@ namespace FPTBookShop.Controllers
                 ModelState.AddModelError("name", "The Display Order cannot exactly match the Name");
             }
 
-            if (ModelState.IsValid) 
-            { 
+            if (ModelState.IsValid)
+            {
                 _unitOfWork.Category.Add(obj);
                 _unitOfWork.Save();
                 TempData["success"] = "Category created successful";
