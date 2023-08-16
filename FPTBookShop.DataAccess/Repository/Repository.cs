@@ -55,7 +55,7 @@ namespace FPTBookShop.DataAccess.Repository
                     query = query.Include(includeProp);
                 }
             }
-            return dbSet.ToList();
+            return query.ToList();
         }
 
         public void Remove(T entity)
