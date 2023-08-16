@@ -130,5 +130,13 @@ namespace FPTBookShop.Areas.Admin.Controllers
             TempData["success"] = "Product deleted successful";
             return RedirectToAction("Index");
         }
+
+        #region APICALLS
+        public IActionResult GetAll()
+        {
+            List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
+            return Json(new {data =  objProductList});
+        }
+        #endregion
     }
 }
