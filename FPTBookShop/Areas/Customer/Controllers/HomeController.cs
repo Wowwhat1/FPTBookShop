@@ -44,6 +44,20 @@ namespace FPTBookShop.Areas.Customer.Controllers
             var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
             shoppingCart.ApplicationUserId = userId;
 
+            ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.ApplicationUserId == userId 
+                && u.ProductId == shoppingCart.ProductId);
+
+            if (cartFromDb != null)
+            {
+                // Shopping cart exists
+                cartFromDb.Count += shoppingCart.Count;
+                _unitOfWork.ShoppingCart.Update(cartFromDb);
+            } else
+            {
+                // Add cart record
+                _unitOfWork.ShoppingCart.Add(shoppingCart);
+            }
+
             _unitOfWork.ShoppingCart.Add(shoppingCart);
             _unitOfWork.Save();
 
