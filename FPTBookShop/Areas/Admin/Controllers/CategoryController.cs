@@ -1,11 +1,14 @@
 ﻿using FPTBookShop.DataAccess.Data;
 using FPTBookShop.DataAccess.Repository.IRepository;
 using FPTBookShop.Models;
+using FPTBookShop.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FPTBookShop.Areas.Admin.Controllers
 {
     [Area(areaName: "Admin")]
+    [Authorize(Roles = SD.Role_Admin)]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

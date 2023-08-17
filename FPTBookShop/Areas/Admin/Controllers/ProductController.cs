@@ -2,12 +2,15 @@
 using FPTBookShop.DataAccess.Repository.IRepository;
 using FPTBookShop.Models;
 using FPTBookShop.Models.ViewModels;
+using FPTBookShop.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FPTBookShop.Areas.Admin.Controllers
 {
     [Area(areaName: "Admin")]
+    [Authorize(Roles = SD.Role_Admin)]
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
