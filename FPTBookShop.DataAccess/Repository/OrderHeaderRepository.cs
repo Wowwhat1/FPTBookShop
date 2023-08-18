@@ -25,10 +25,9 @@ namespace FPTBookShop.DataAccess.Repository
         }
 
 
-        public void UpadteStatus(int id, string orderStatus, string? paymentStatus = null)
+        public void UpdateStatus(int id, string orderStatus, string? paymentStatus = null)
         {
             var orderFromDb = _db.OrderHeaders.FirstOrDefault(u => u.Id == id);
-
             if (orderFromDb != null)
             {
                 orderFromDb.OrderStatus = orderStatus;
@@ -41,8 +40,7 @@ namespace FPTBookShop.DataAccess.Repository
 
         public void UpdateStripePaymentID(int id, string sessionId, string paymentIntentId)
         {
-            var orderFromDb = (_db.OrderHeaders.FirstOrDefault(u => u.Id == id));
-
+            var orderFromDb = _db.OrderHeaders.FirstOrDefault(u => u.Id == id);
             if (!string.IsNullOrEmpty(sessionId))
             {
                 orderFromDb.SessionId = sessionId;
