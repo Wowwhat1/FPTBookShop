@@ -10,7 +10,6 @@ namespace FPTBookShop.Areas.Admin.Controllers
     public class OrderController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
-
         public OrderController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
@@ -26,18 +25,20 @@ namespace FPTBookShop.Areas.Admin.Controllers
             OrderVM orderVM = new()
             {
                 OrderHeader = _unitOfWork.OrderHeader.Get(u => u.Id == orderId, includeProperties: "ApplicationUser"),
-                OrderDetails = _unitOfWork.OrderDetail.GetAll(u => u.OrderHeaderId == orderId, includeProperties: "Product")
+                OrderDetail = _unitOfWork.OrderDetail.GetAll(u => u.OrderHeaderId == orderId, includeProperties: "Product")
             };
 
             return View(orderVM);
         }
 
-        #region APICALLS
+
+
+        #region API CALLS
+
         [HttpGet]
         public IActionResult GetAll(string status)
         {
             IEnumerable<OrderHeader> objOrderHeaders = _unitOfWork.OrderHeader.GetAll(includeProperties: "ApplicationUser").ToList();
-
 
             switch (status)
             {
@@ -58,7 +59,6 @@ namespace FPTBookShop.Areas.Admin.Controllers
             }
             return Json(new { data = objOrderHeaders });
         }
-
         #endregion
     }
 }
